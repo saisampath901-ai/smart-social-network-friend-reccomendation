@@ -9,7 +9,7 @@
 #define MAX_INTEREST_LEN 30
 #define DATA_FILE "social_network.dat"
 
-/* SMART SOCIAL NETWORK FRIEND RECOMMENDATION SYSTEM */
+
 
 typedef struct FriendNode {
     int userId;
