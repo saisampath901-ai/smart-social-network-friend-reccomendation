@@ -1,15 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #define MAX 100
-
 struct Node
 {
     int id;
     struct Node *next;
 };
-
 struct User
 {
     int id;
@@ -18,12 +15,8 @@ struct User
     char interest[30];
     struct Node *friends;
 };
-
 struct User users[MAX];
 int n = 0;
-
-
-
 int findUser(int id)
 {
     for(int i = 0; i < n; i++)
@@ -34,9 +27,6 @@ int findUser(int id)
 
     return -1;
 }
-
-
-
 void registerUser()
 {
     if(n >= MAX)
@@ -87,8 +77,6 @@ void displayUsers()
         printf("\nInterest: %s\n", users[i].interest);
     }
 }
-
-
 void addFriend()
 {
     int a, b;
@@ -138,8 +126,6 @@ void addFriend()
 
     printf("Friendship added!\n");
 }
-
-
 void displayFriends()
 {
     int id;
@@ -154,7 +140,6 @@ void displayFriends()
         printf("User not found!\n");
         return;
     }
-
     struct Node *temp = users[index].friends;
 
     printf("Friends of %s:\n", users[index].name);
@@ -175,8 +160,6 @@ void displayFriends()
         temp = temp->next;
     }
 }
-
-
 void mutualFriends()
 {
     int a, b, count = 0;
@@ -222,13 +205,9 @@ void mutualFriends()
 
     printf("Total Mutual Friends: %d\n", count);
 }
-
-
-
 void recommendFriends()
 {
     int id;
-
     printf("Enter Your User ID: ");
     scanf("%d", &id);
 
@@ -239,19 +218,15 @@ void recommendFriends()
         printf("User not found!\n");
         return;
     }
-
     printf("\nFriend Recommendations:\n");
-
     int count = 0;
 
     for(int i = 0; i < n; i++)
     {
         if(i == index)
             continue;
-
         struct Node *temp = users[index].friends;
         int alreadyFriend = 0;
-
         while(temp != NULL)
         {
             if(temp->id == users[i].id)
@@ -262,27 +237,20 @@ void recommendFriends()
 
             temp = temp->next;
         }
-
         if(alreadyFriend)
             continue;
-
         if(strcmp(users[index].city, users[i].city) == 0 ||
            strcmp(users[index].interest, users[i].interest) == 0)
         {
             printf("Name: %s\n", users[i].name);
             printf("City: %s\n", users[i].city);
             printf("Interest: %s\n\n", users[i].interest);
-
-            count++;
+          count++;
         }
     }
-
     if(count == 0)
         printf("No recommendations found!\n");
 }
-
-
-
 int main()
 {
     int choice;
