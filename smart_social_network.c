@@ -22,7 +22,7 @@ struct User
 struct User users[MAX];
 int n = 0;
 
-/* Find User */
+
 
 int findUser(int id)
 {
@@ -35,7 +35,7 @@ int findUser(int id)
     return -1;
 }
 
-/* Register User */
+
 
 void registerUser()
 {
@@ -70,7 +70,6 @@ void registerUser()
     printf("User registered successfully!\n");
 }
 
-/* Display Users */
 
 void displayUsers()
 {
@@ -89,7 +88,6 @@ void displayUsers()
     }
 }
 
-/* Add Friend */
 
 void addFriend()
 {
@@ -141,7 +139,6 @@ void addFriend()
     printf("Friendship added!\n");
 }
 
-/* Display Friends */
 
 void displayFriends()
 {
@@ -179,7 +176,6 @@ void displayFriends()
     }
 }
 
-/* Mutual Friends */
 
 void mutualFriends()
 {
@@ -227,7 +223,7 @@ void mutualFriends()
     printf("Total Mutual Friends: %d\n", count);
 }
 
-/* Recommend Friends */
+
 
 void recommendFriends()
 {
@@ -285,7 +281,7 @@ void recommendFriends()
         printf("No recommendations found!\n");
 }
 
-/* Main Function */
+
 
 int main()
 {
